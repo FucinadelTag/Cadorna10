@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Vendita Appartamenti via Cadorna 10 Milano" %></title>
+
+    <meta name="description" content="<%= current_page.data.description || "Descrizione da inserire" %>" />
+
+    <%= stylesheet_link_tag "all" %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js"></script>
+
+
+
+    <% if current_page.data.headCode  %>
+        <%= current_page.data.headCode %>
+    <% end %>
+
+  </head>
+
+    <body>
+
+        <div class="top-bar">
+            <div class="top-bar-title"><a href="/">Piazzale Cadorna 10</a></div>
+        </div>
+
+        <section class="title-container show-for-medium" style="background: url(<%= current_page.data.immagineTestata %>) center no-repeat; background-size: cover;">
+            <div class="row clearfix">
+                <div class="title float-center">
+                    <h1 class="big">
+                        <% if current_page.data.testata.prima_riga != ''  %>
+                            <%= current_page.data.testata.prima_riga %>
+                        <% end %>
+                    </h1>
+                    <span class="medium">
+                        <% if current_page.data.testata.seconda_riga != ''  %>
+                            <%= current_page.data.testata.seconda_riga %><br />
+                        <% end %>
+                    </span>
+
+                    <% if current_page.data.testata.hasButton != 0  %>
+                        <span>
+                            <%= partial "partials/callToAction" %>
+                        </span>
+                    <% end %>
+                </div>
+            </div>
+    </section>
+
+    <section class="title-container show-for-small-only">
+            <div class="row clearfix">
+                <div class="title float-center">
+                    <h1 class="title-mobile">
+                        <% if current_page.data.testata.prima_riga != ''  %>
+                            <%= current_page.data.testata.prima_riga %>
+                        <% end %>
+                    </h1>
+                    <br>
+                    <h2 class="medium">
+                        <% if current_page.data.testata.seconda_riga != ''  %>
+                            <%= current_page.data.testata.seconda_riga %><br />
+                        <% end %>
+                    </h2>
+                    <img src="<%= current_page.data.immagineTestata %>">
+                    <br><br>
+                    <% if current_page.data.testata.hasButton != 0  %>
+                        <h3 class="show-for-medium">
+                            <%= partial "partials/callToAction" %>
+                        </h3>
+                    <% end %>
+                </div>
+            </div>
+    </section>
+
+        <%= yield %>
+
+
+        <%= javascript_include_tag  "all" %>
+
+        <script type="text/javascript">
+            // var _iub = _iub || [];
+            // _iub.csConfiguration = {
+            //     cookiePolicyId: 846066,
+            //     siteId: 390159,
+            //     lang: "it",
+            //     priorConsent: false
+            // };
+        </script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
+
+
+        <% if current_page.data.conversionCode  %>
+            <%= current_page.data.conversionCode %>
+        <% end %>
+  </body>
+
+</html>
