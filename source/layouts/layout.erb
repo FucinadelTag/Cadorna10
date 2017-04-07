@@ -84,10 +84,12 @@
 
         <%= yield %>
 
+        <%= partial "partials/footer" %>
+
 
         <%= javascript_include_tag  "all" %>
 
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             // var _iub = _iub || [];
             // _iub.csConfiguration = {
             //     cookiePolicyId: 846066,
@@ -96,7 +98,7 @@
             //     priorConsent: false
             // };
         </script>
-        <script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script> -->
 
 
         <% if current_page.data.conversionCode  %>

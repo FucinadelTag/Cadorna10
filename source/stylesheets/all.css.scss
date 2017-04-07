@@ -9,6 +9,35 @@ $rosso-color: #FF0A0A !default;
 $ctaButton-header-color: $evidence-color !default;
 $ctaButton-radius: 30px !default;
 
+div.spazio_bianco {
+  height: 4.5rem;
+}
+
+div.titolo_blocco {
+  padding-bottom: 3rem;
+}
+
+.google_map {
+  padding-bottom: 5rem;
+}
+
+.servizi {
+  line-height: 3rem
+}
+
+.finiture {
+  p {
+    line-height: 2.7rem
+  }
+
+}
+
+.mezzi {
+  ul li {
+    margin-left: 20px;
+  }
+}
+
 .top-bar-title {
   font-weight: 800;
   letter-spacing: 3px;

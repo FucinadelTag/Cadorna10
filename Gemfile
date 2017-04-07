@@ -10,6 +10,5 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 
 gem "typescript-node"
 gem "middleman-compass"
-gem "middleman-minify-html"
-
 gem "middleman-sprockets"
+gem "middleman-minify-html"
