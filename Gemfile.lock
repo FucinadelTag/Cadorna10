@@ -115,7 +115,6 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    tsrc (2.1.5.0)
     typescript-node (1.6.2)
       typescript-src (~> 1.6.2)
     typescript-src (1.6.2.0)
@@ -133,7 +132,6 @@ DEPENDENCIES
   middleman-compass
   middleman-minify-html
   middleman-sprockets
-  tsrc
   typescript-node
   tzinfo-data
   wdm (~> 0.1)
