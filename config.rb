@@ -52,6 +52,14 @@ activate :directory_indexes
 
 set :index_file, "index.html"
 
+activate :minify_css
+activate :minify_javascript
+activate :gzip
+activate :minify_html
+
+
+
+
 PrismicApi = Prismic.api('https://cadorna10.prismic.io/api')
 
 gallery = PrismicApi.form('everything')
