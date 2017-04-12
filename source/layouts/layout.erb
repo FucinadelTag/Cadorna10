@@ -11,7 +11,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Vendita Appartamenti via Cadorna 10 Milano" %></title>
 
-    <meta name="description" content="<%= current_page.data.description || "Descrizione da inserire" %>" />
+    <meta name="description" content="<%= current_page.data.description || "Vendita Appartamenti via Cadorna 10 Milano" %>" />
 
     <%= stylesheet_link_tag "all" %>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
@@ -34,6 +34,17 @@
   </head>
 
     <body>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-97239332-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 
         <div class="top-bar">
             <div class="top-bar-title"><a href="/">Piazzale Cadorna 10</a></div>
@@ -93,6 +104,29 @@
 
 
         <%= javascript_include_tag  "all" %>
+
+        <!-- COOKIES POLICY-->
+        <script type="text/javascript">
+            var _iub = _iub || [];
+            _iub.csConfiguration = {
+                cookiePolicyId: 7853980,
+                siteId: 553129,
+                priorConsent: false,
+                banner: {
+                    slideDown: false,
+                    applyStyles: false,
+                    fontSize: "11px",
+                    textColor: "#ffffff",
+                    backgroundColor: '#9a9a9a',
+                    content: "<p>Questo sito si avvale di cookie necessari al suo funzionamento. Se vuoi saperne di pi&ugrave; consulta la %{cookie_policy_link}.<br />Chiudendo questo banner acconsenti all’uso dei cookie.</p>"
+                }
+            };
+            (function (w, d) {
+                var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/cookie_solution/iubenda_cs.js"; tag.parentNode.insertBefore(s, tag); };
+                if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; }
+            })(window, document);
+        </script>
+
 
         <!-- <script type="text/javascript">
             // var _iub = _iub || [];
