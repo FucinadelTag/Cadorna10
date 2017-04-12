@@ -56,7 +56,6 @@ set :index_file, "index.html"
 
 
 
-
 PrismicApi = Prismic.api('https://cadorna10.cdn.prismic.io/api')
 
 gallery = PrismicApi.form('everything')
@@ -68,31 +67,10 @@ gallery = PrismicApi.form('everything')
 page "/index.html", locals: { results: gallery }
 
 helpers do
-  def set_prismic_helper_settings(prismic_document_type, results)
-    @page = prismic_document_type
-    @result = results
-  end
-
-  def get_text_helper(attr_name)
-    if @result["#{@page}.#{attr_name}"].present?
-      return @result["#{@page}.#{attr_name}"].as_text()
-    else
-      ""
+    def set_prismic_helper_settings(prismic_document_type, results)
+      @page = prismic_document_type
+      @result = results
     end
-  end
-
-  def get_rich_text_helper(attr_name)
-    resolver = Prismic.link_resolver('master'){ |doc_link| "http:#localhost/#{doc_link.id}" }
-    return @result["#{@page}.#{attr_name}"].as_html(resolver)
-  end
-
-  def get_immagini_helper(attr_name)
-    if @result["#{@page}.#{group_name}"].present?
-      return @result["#{@page}.#{group_name}"]
-    else
-      []
-    end
-  end
 
     def getImagesAsHash (attr_name)
         images = @result["#{@page}.#{attr_name}"]
@@ -110,6 +88,14 @@ helpers do
             end
         end
         return imagesHash
+
+    end
+
+    def getImgxUrl (url)
+
+      client = Imgix::Client.new(host: 'cadorna10.imgix.net', secure_url_token: 'hyEywDaqjdKyk7bz')
+
+      return client.path(url).to_url()
 
     end
 end

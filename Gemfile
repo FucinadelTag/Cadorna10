@@ -14,3 +14,6 @@ gem "middleman-minify-html"
 
 
 gem "prismic.io", require: "prismic"
+
+
+gem 'imgix'
