@@ -11,3 +11,6 @@ gem "typescript-node"
 gem "middleman-compass"
 gem "middleman-sprockets"
 gem "middleman-minify-html"
+
+
+gem "prismic.io", require: "prismic"

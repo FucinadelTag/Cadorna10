@@ -21,6 +21,8 @@ conversionCode: >
 ---
 
 
+
+
 <div class="row banner show-for-medium">
         <div class="small-12 columns">
             <a href="#form">
@@ -231,6 +233,37 @@ conversionCode: >
         </div>
 
 </div>
+
+
+<div class="spazio_bianco"></div>
+<%= partial "partials/rowCallToAction" %>
+<hr>
+<div class="spazio_bianco"></div>
+
+<div class="row titolo_blocco">
+    <div class="small-12 columns">
+    <h2>Crea il tuo spazio esclusivo</h2>
+    </div>
+</div>
+
+<div class="row">
+        <div class="small-12 medium-12 columns">
+            <% set_prismic_helper_settings('immagini', results) %>
+
+            <div class="fotorama" data-nav="thumbs">
+
+                <% getImagesAsHash('gallery').each do |key, immagine| %>
+
+                    <img src=" <%= immagine['url'] %>">
+
+                <% end %>
+
+            </div>
+
+
+        </div>
+</div>
+
 <div class="spazio_bianco"></div>
 <%= partial "partials/rowCallToAction" %>
 <hr>
