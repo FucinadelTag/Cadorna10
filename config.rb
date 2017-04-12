@@ -2,6 +2,7 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 ignore /(.*)\.ts/
+ignore /(.*)\.js/
 
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
@@ -142,7 +143,7 @@ end
 
 configure :build do
   activate :minify_css
-  #activate :minify_javascript
+  activate :minify_javascript
   activate :gzip
   activate :minify_html
 end
