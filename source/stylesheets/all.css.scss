@@ -63,10 +63,26 @@ div.titolo_blocco {
   }
 }
 
+@media all and (min-width: 1023px) {
+h1{
+    font-size: 70px;
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 600px) {
+h1{
+    font-size: 5vw;
+  }
+}
+
+@media all and (max-width: 599px) and (min-width: 50px) {
+h1{
+    font-size: 3vw;
+  }
+}
+
 .title-container {
     background-size: cover;
-    padding-left: 2%;
-    padding-right: 2%;
     padding-top: 7%;
     padding-bottom: 7%;
     margin-bottom: 10px;
@@ -74,12 +90,11 @@ div.titolo_blocco {
     .title {
         background-color: rgba(255,255,255,0.4);
         text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 3%;
+        padding-right: 3%;
         letter-spacing: 1px;
         color: #000000;
         .big {
-            font-size: 5vw;
             text-transform: none;
             font-weight: 700;
             font-style: italic;
