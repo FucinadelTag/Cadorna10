@@ -99,7 +99,6 @@ helpers do
 
     end
 end
-
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
