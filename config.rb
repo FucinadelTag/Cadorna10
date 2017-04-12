@@ -57,7 +57,7 @@ set :index_file, "index.html"
 
 
 
-PrismicApi = Prismic.api('https://cadorna10.prismic.io/api')
+PrismicApi = Prismic.api('https://cadorna10.cdn.prismic.io/api')
 
 gallery = PrismicApi.form('everything')
                 .query(Prismic::Predicates.at('document.tags', ['gallery_appartamenti']))
