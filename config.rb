@@ -60,8 +60,8 @@ PrismicApi = Prismic.api('https://cadorna10.cdn.prismic.io/api')
 
 gallery = PrismicApi.form('everything')
                 .query(Prismic::Predicates.at('document.tags', ['gallery_appartamenti']))
+                .orderings('[my.immagini.ordine]')
                 .submit(PrismicApi.master_ref)
-                .results.first
 
 # Pass that data to the page
 page "/index.html", locals: { results: gallery }
@@ -73,9 +73,12 @@ helpers do
     end
 
     def getImagesAsHash (attr_name)
-        images = @result["#{@page}.#{attr_name}"]
+      imagesHash = {};
+      @result.each_with_index do |gallery, indexGallery|
 
-        imagesHash = {};
+        images = gallery["#{@page}.#{attr_name}"]
+
+
 
         if (images && images.size > 0)
             images.each_with_index do |image, index|
@@ -84,10 +87,14 @@ helpers do
                 caption = image["caption"] == nil ? nil : image["caption"].as_text
                 link = image["url"] == nil ? nil : image["url"].as_text
 
-                imagesHash [index] = {'url' => urlWide , 'caption' => caption, 'link' => link}
+                imagesHash ["#{indexGallery}_#{index}"] = {'url' => urlWide , 'caption' => caption, 'link' => link}
             end
         end
-        return imagesHash
+      end
+
+      # puts (imagesHash.inspect);
+
+      return imagesHash
 
     end
 
