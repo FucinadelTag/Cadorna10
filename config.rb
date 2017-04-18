@@ -80,7 +80,7 @@ helpers do
         if (images && images.size > 0)
             images.each_with_index do |image, index|
 
-                urlWide = image['picture'].get_view('grande').url;
+                urlWide = image['picture'].get_view('main').url;
                 caption = image["caption"] == nil ? nil : image["caption"].as_text
                 link = image["url"] == nil ? nil : image["url"].as_text
 
